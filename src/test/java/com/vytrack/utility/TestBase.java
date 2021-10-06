@@ -1,4 +1,4 @@
-package com.vytrack.utilities;
+package com.vytrack.utility;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,7 +18,7 @@ public abstract class TestBase {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.get(ConfigurationReader.read("login_url"));
+        driver.get(ConfigReader.read("login_url"));
     }
 /*
      //commented this out due to leaving browser open to troubleshoot testing code.
