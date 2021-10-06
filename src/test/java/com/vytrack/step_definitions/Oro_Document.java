@@ -33,7 +33,8 @@ public class Oro_Document {
 
         dashboard.clickQuestionIcon();
 
-        BrowserUtil.waitFor(2);
+        BrowserUtil.waitFor(5);
+
 
        // Set<String> allHandles = Driver.getDriver().getWindowHandles();
        // System.out.println("allHandles = " + allHandles);

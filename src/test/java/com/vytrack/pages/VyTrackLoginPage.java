@@ -25,7 +25,7 @@ public class VyTrackLoginPage {
     }
 
     public void goTo(){
-        Driver.getDriver().get(ConfigReader.read("vyTrack.url"));
+        Driver.getDriver().get(ConfigReader.read("login_url"));
     }
 
     public void login(String username, String password){
