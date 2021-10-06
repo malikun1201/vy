@@ -1,12 +1,11 @@
 package com.vytrack.pages;
-
+import com.vytrack.utility.ConfigReader;
+import com.vytrack.utility.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+import org.openqa.selenium.support.PageFactory;
 
 public class VyTrackLoginPage {
-
-
 
 
     @FindBy(id = "prependedInput")
@@ -27,7 +26,19 @@ public class VyTrackLoginPage {
     @FindBy(linkText = "Forgot your password?")
     public WebElement forgotPasswordLinkTxt;
 
+    public VyTrackLoginPage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
+    public void goTo(){
+        Driver.getDriver().get(ConfigReader.read("vyTrack.url"));
+    }
+
+    public void login(String username, String password){
+        usernameField.sendKeys(username);
+        passwordField.sendKeys(password);
+        loginButton.click();
+    }
 
 
     public void setUsernameField(String username){
@@ -39,5 +50,5 @@ public class VyTrackLoginPage {
     public void clickSubmitButton(){
         loginButton.click();
     }
-
+    
 }
