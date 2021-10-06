@@ -1,7 +1,9 @@
 package com.vytrack.pages;
 
+import com.vytrack.utility.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class CreateVehiclePage {
 
@@ -11,7 +13,7 @@ public class CreateVehiclePage {
     @FindBy(linkText = "Vehicles")
     public WebElement vehicleModule;
 
-    @FindBy(xpath = "//*[@id=\"container\"]/div[2]/div/div/div[2]/a")
+    @FindBy(xpath = "//*[@title='Create Car']")
     public WebElement createCarBtn;
 
     @FindBy(id = "custom_entity_type_LicensePlate-uid-615dd952712da")
@@ -74,4 +76,7 @@ public class CreateVehiclePage {
     @FindBy(linkText = "Save and Close")
     public WebElement saveAndCloseBtn;
 
+    public CreateVehiclePage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 }

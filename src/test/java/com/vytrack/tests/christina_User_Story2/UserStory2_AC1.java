@@ -8,6 +8,7 @@ import io.cucumber.java.tr.Ve;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
@@ -43,8 +44,9 @@ public class UserStory2_AC1 extends TestBase {
         loginPage.goTo();
         loginPage.login("storemanager59","UserUser123");
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         Assertions.assertEquals("Dashboard",driver.getTitle());
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         CreateVehiclePage vehiclePage= new CreateVehiclePage();
 
