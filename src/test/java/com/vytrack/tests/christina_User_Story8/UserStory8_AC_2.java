@@ -1,4 +1,4 @@
-package com.vytrack.christina_User_Story8;
+package com.vytrack.tests.christina_User_Story8;
 
 import org.junit.jupiter.api.Test;
 
