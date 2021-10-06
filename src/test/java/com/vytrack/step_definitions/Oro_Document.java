@@ -1,6 +1,6 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.VyTrackDashboard;
+import com.vytrack.tests.altanochir_User_Story10.VyTrackDashboard;
 import com.vytrack.pages.VyTrackLoginPage;
 import com.vytrack.utility.BrowserUtil;
 import io.cucumber.java.en.Given;
