@@ -2,16 +2,9 @@ package com.vytrack.step_definitions;
 
 import com.vytrack.pages.VyTrackDashboard;
 import com.vytrack.pages.VyTrackLoginPage;
-import com.vytrack.utility.BrowserUtil;
-import com.vytrack.pages.VyTrackDashboard;
-import com.vytrack.pages.VyTrackLoginPage;
-import com.vytrack.utility.BrowserUtil;
-import com.vytrack.utility.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-import java.util.Set;
 
 public class Oro_Document {
     VyTrackLoginPage loginPage;

@@ -13,7 +13,7 @@ public class Driver {
 
     public static WebDriver getDriver(){
 
-        String browserName = ConfigReader.read("browser");
+        String browserName = com.cydeo.utility.ConfigReader.read("browser");
 
         if(obj == null){
 
