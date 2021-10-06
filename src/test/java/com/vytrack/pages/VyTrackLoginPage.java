@@ -7,35 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class VyTrackLoginPage {
 
-    @FindBy(id="prependedInput" )
-    private WebElement usernameBox;
-
-
-    @FindBy(id ="prependedInput2")
-    private WebElement passwordBox;
-
-
-    @FindBy(id ="_submit")
-    private WebElement loginBtn;
-
-
-
-    public VyTrackLoginPage(){
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
-
-    public void goTo(){
-        Driver.getDriver().get(ConfigReader.read("login_url"));
-    }
-
-    public void login(String username, String password){
-        usernameBox.sendKeys(username);
-        passwordBox.sendKeys(password);
-        loginBtn.click();
-    }
-
-
-
 
     @FindBy(id = "prependedInput")
     public WebElement usernameField;
@@ -55,7 +26,19 @@ public class VyTrackLoginPage {
     @FindBy(linkText = "Forgot your password?")
     public WebElement forgotPasswordLinkTxt;
 
+    public VyTrackLoginPage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
+    public void goTo(){
+        Driver.getDriver().get(ConfigReader.read("vyTrack.url"));
+    }
+
+    public void login(String username, String password){
+        usernameField.sendKeys(username);
+        passwordField.sendKeys(password);
+        loginButton.click();
+    }
 
 
     public void setUsernameField(String username){
