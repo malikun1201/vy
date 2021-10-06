@@ -11,7 +11,7 @@ public class ConfigReader {
     static {
 
         try {
-            FileInputStream in = new FileInputStream("config.properties");
+            FileInputStream in = new FileInputStream("configuration.properties");
             properties.load(in);
             in.close();
         } catch (IOException e) {

@@ -2,6 +2,7 @@ package com.vytrack.step_definitions;
 
 import com.vytrack.pages.VyTrackDashboard;
 import com.vytrack.pages.VyTrackLoginPage;
+import com.vytrack.utility.BrowserUtil;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,7 +33,8 @@ public class Oro_Document {
 
         dashboard.clickQuestionIcon();
 
-        BrowserUtil.waitFor(2);
+        BrowserUtil.waitFor(5);
+
 
        // Set<String> allHandles = Driver.getDriver().getWindowHandles();
        // System.out.println("allHandles = " + allHandles);
