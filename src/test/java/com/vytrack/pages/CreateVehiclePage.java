@@ -5,11 +5,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class CreateVehiclePage {
 
+    @FindBy(linkText = "Fleet")//xpath = //*[@id="main-menu"]/ul/li[1]/a/span
+    public WebElement fleetModuleManagers;
 
     @FindBy(linkText = "Vehicles")
     public WebElement vehicleModule;
 
-    @FindBy(linkText = "Create Car")
+    @FindBy(xpath = "//*[@id=\"container\"]/div[2]/div/div/div[2]/a")
     public WebElement createCarBtn;
 
     @FindBy(id = "custom_entity_type_LicensePlate-uid-615dd952712da")

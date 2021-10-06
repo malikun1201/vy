@@ -5,10 +5,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class VehicleOdometerPage {
 
+    @FindBy(id = "main-menu-toggle")
+    public WebElement burgerMenu;
 
-
-    @FindBy(linkText = "Fleet")//xpath = //*[@id="main-menu"]/ul/li[1]/a/span
-    public WebElement fleetModule;
+    @FindBy(linkText = "Fleet")
+    public WebElement fleetModuleDriver;
 
     @FindBy(partialLinkText = "VehicleOdometer")
     public WebElement vehicleOdometer;

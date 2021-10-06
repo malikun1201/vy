@@ -14,7 +14,7 @@ public abstract class TestBase {
     @BeforeEach
     public void setupWebDriver() {
 
-        driver = WebDriverFactory.getDriver("chrome");
+        driver = Driver.getDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 

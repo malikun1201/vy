@@ -7,6 +7,7 @@ import com.vytrack.utility.TestBase;
 import io.cucumber.java.tr.Ve;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
@@ -41,18 +42,18 @@ public class UserStory2_AC1 extends TestBase {
         VyTrackLoginPage loginPage= new VyTrackLoginPage();
         loginPage.goTo();
         loginPage.login("storemanager59","UserUser123");
-        loginPage.loginButton.click();
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Assertions.assertEquals("Dashboard",driver.getTitle());
 
-
-        VehicleOdometerPage vehicleOdometerPage=new VehicleOdometerPage();
-        Actions action= new Actions(driver);
-        action.moveToElement(vehicleOdometerPage.fleetModule);
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         CreateVehiclePage vehiclePage= new CreateVehiclePage();
-        vehiclePage.vehicleModule.click();
+
+        Actions action= new Actions(driver);
+        action.moveToElement(driver.findElement(By.linkText("Fleet"))).perform();
+        action.click(driver.findElement(By.linkText("Vehicles"))).perform();
+
+
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         vehiclePage.createCarBtn.click();
         vehiclePage.saveAndCloseBtn.click();
 
