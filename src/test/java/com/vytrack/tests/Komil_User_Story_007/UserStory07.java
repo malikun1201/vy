@@ -1,4 +1,4 @@
-package com.vytrack.Komil_User_Story_007;
+package com.vytrack.tests.Komil_User_Story_007;
 
 public class UserStory07 {
     /*
