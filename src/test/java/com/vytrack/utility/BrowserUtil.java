@@ -1,6 +1,6 @@
-package com.vytrack.utilities;
+package com.vytrack.utility;
 
-public class BrowserUtils {
+public class BrowserUtil {
 
     public static void waitFor(int seconds){
 
