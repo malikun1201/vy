@@ -11,6 +11,12 @@ public class VyTrackDashboard {
     private WebElement questionIcon ;
 
 
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[3]/a/span")
+    public WebElement fleetVehicle;
+
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a/span")
+    public WebElement fleetModule;
+
     public VyTrackDashboard(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -22,4 +28,4 @@ public class VyTrackDashboard {
     }
 }
 
-
+//*[@id="main-menu"]/ul/li[2]/a/span

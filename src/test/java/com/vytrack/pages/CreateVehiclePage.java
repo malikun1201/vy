@@ -8,10 +8,10 @@ public class CreateVehiclePage {
     @FindBy(linkText = "Fleet")//xpath = //*[@id="main-menu"]/ul/li[1]/a/span
     public WebElement fleetModuleManagers;
 
-    @FindBy(linkText = "Vehicles")
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[3]/a/span")//*[@id="main-menu"]/ul/li[2]/div/div/ul/li[3]/a/span
     public WebElement vehicleModule;
 
-    @FindBy(xpath = "//*[@id=\"container\"]/div[2]/div/div/div[2]/a")
+    @FindBy(xpath= "//*[@title=' Create Car ']")
     public WebElement createCarBtn;
 
     @FindBy(id = "custom_entity_type_LicensePlate-uid-615dd952712da")
@@ -71,7 +71,7 @@ public class CreateVehiclePage {
     @FindBy(id = "s2id_custom_entity_type_Transmission-uid-615dd9b1dce55")
     public WebElement transmissionBox;
 
-    @FindBy(linkText = "Save and Close")
+    @FindBy(xpath= "//button[contains(text(),'Save and Close')]")
     public WebElement saveAndCloseBtn;
 
 }
