@@ -1,5 +1,7 @@
 package com.vytrack.utility;
 
+import org.junit.AfterClass;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
@@ -21,12 +23,20 @@ public abstract class TestBase {
         driver.get(ConfigReader.read("login_url"));
     }
 
-  /*   //commented this out due to leaving browser open to troubleshoot testing code.
+     //commented this out due to leaving browser open to troubleshoot testing code.
+   /*
     @AfterEach
     public void closeBrowser() {
         driver.quit();
     }
-*/
+
+    */
+
+    @AfterEach
+    public void closeBrowser() {
+        System.out.println("Driver closing");
+        driver.quit();
+    }
 
 
 }

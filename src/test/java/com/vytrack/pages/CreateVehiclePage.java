@@ -1,17 +1,19 @@
 package com.vytrack.pages;
 
+import com.vytrack.utility.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class CreateVehiclePage {
 
     @FindBy(linkText = "Fleet")//xpath = //*[@id="main-menu"]/ul/li[1]/a/span
     public WebElement fleetModuleManagers;
 
-    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[3]/a/span")//*[@id="main-menu"]/ul/li[2]/div/div/ul/li[3]/a/span
+    @FindBy(linkText = "Vehicles")
     public WebElement vehicleModule;
 
-    @FindBy(xpath= "//*[@title=' Create Car ']")
+    @FindBy(xpath = "//*[@title='Create Car']")
     public WebElement createCarBtn;
 
     @FindBy(id = "custom_entity_type_LicensePlate-uid-615dd952712da")
@@ -71,7 +73,14 @@ public class CreateVehiclePage {
     @FindBy(id = "s2id_custom_entity_type_Transmission-uid-615dd9b1dce55")
     public WebElement transmissionBox;
 
-    @FindBy(xpath= "//button[contains(text(),'Save and Close')]")
+    @FindBy(xpath = "//button[contains(text(),'Save and Close')]")
     public WebElement saveAndCloseBtn;
 
+    @FindBy(id = "flash-messages")
+    public WebElement entityMsg;
+
+    public CreateVehiclePage(){
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 }
+
