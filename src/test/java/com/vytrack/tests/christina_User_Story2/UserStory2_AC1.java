@@ -3,10 +3,12 @@ package com.vytrack.tests.christina_User_Story2;
 import com.vytrack.pages.CreateVehiclePage;
 import com.vytrack.pages.VehicleOdometerPage;
 import com.vytrack.pages.VyTrackLoginPage;
+import com.vytrack.utility.BrowserUtil;
 import com.vytrack.utility.TestBase;
 import io.cucumber.java.tr.Ve;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -44,22 +46,42 @@ public class UserStory2_AC1 extends TestBase {
         loginPage.goTo();
         loginPage.login("storemanager59","UserUser123");
 
+        BrowserUtil.waitFor(5);
 
         Assertions.assertEquals("Dashboard",driver.getTitle());
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         CreateVehiclePage vehiclePage= new CreateVehiclePage();
 
         Actions action= new Actions(driver);
+        BrowserUtil.waitFor(5);
         action.moveToElement(driver.findElement(By.linkText("Fleet"))).perform();
+
+        BrowserUtil.waitFor(4);
+
         action.click(driver.findElement(By.linkText("Vehicles"))).perform();
 
+        BrowserUtil.waitFor(4);
 
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         vehiclePage.createCarBtn.click();
+
+        BrowserUtil.waitFor(3);
+
         vehiclePage.saveAndCloseBtn.click();
 
-        Assertions.assertEquals("Entity saved",driver.switchTo().alert().getText());
+        BrowserUtil.waitFor(2);
+
+        String alertTxt = "";
+        alertTxt = vehiclePage.entityMsg.getText();
+
+        // regular expression
+        alertTxt = alertTxt.replaceAll("[^a-zA-Z]", "");
+
+        System.out.println("Alert message:\n"+ alertTxt);
+
+        Assertions.assertEquals("Entitysaved", alertTxt);
+
+
 
 
 

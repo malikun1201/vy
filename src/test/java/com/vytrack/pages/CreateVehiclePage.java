@@ -73,10 +73,14 @@ public class CreateVehiclePage {
     @FindBy(id = "s2id_custom_entity_type_Transmission-uid-615dd9b1dce55")
     public WebElement transmissionBox;
 
-    @FindBy(linkText = "Save and Close")
+    @FindBy(xpath = "//button[contains(text(),'Save and Close')]")
     public WebElement saveAndCloseBtn;
+
+    @FindBy(id = "flash-messages")
+    public WebElement entityMsg;
 
     public CreateVehiclePage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 }
+
