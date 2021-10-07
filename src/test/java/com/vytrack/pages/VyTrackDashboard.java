@@ -1,4 +1,4 @@
-package com.vytrack.tests.altanochir_User_Story10;
+package com.vytrack.pages;
 
 import com.vytrack.utility.Driver;
 import org.openqa.selenium.WebElement;
