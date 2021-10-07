@@ -24,19 +24,12 @@ public abstract class TestBase {
     }
 
      //commented this out due to leaving browser open to troubleshoot testing code.
-   /*
-    @AfterEach
-    public void closeBrowser() {
-        driver.quit();
-    }
-
-    */
-
+ /*
     @AfterEach
     public void closeBrowser() {
         System.out.println("Driver closing");
         driver.quit();
     }
-
+ */
 
 }

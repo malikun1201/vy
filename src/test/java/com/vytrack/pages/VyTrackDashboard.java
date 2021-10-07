@@ -10,12 +10,19 @@ public class VyTrackDashboard {
     @FindBy(xpath = "//i[@class='fa-question-circle']")
     private WebElement questionIcon ;
 
-
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[3]/a/span")
     public WebElement fleetVehicle;
 
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a/span")
     public WebElement fleetModule;
+
+    @FindBy(linkText = "Customers")
+    public WebElement customersModule;
+
+    @FindBy(linkText = "Contacts")
+    public WebElement customerContacts;
+
+
 
     public VyTrackDashboard(){
         PageFactory.initElements(Driver.getDriver(), this);
