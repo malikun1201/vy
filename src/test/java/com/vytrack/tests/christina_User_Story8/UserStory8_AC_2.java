@@ -85,7 +85,7 @@ public class UserStory8_AC_2 extends TestBase {
             action.click(driver.findElement(By.xpath(" //span[contains(text(),'Vehicle Odometer')]"))).perform();
             BrowserUtil.waitFor(6);
 
-
+            //Then verify “You do not have permission to perform this action.” message
             String actualResult = vehicleOdometerPage.flashMessage.getText();
             assertEquals("You do not have permission to perform this action.", actualResult);
 
