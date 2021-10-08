@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
 /**
  * AC #1: only store/sales manager able to create car
  * Given store/sales manager is on the homePage
@@ -81,12 +80,6 @@ public class UserStory2_AC1 extends TestBase {
 
         Assertions.assertEquals("Entitysaved", alertTxt);
 
-
-
-
-
-
+        
     }
-
-
 }
