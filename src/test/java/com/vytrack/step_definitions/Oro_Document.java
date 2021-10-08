@@ -3,9 +3,14 @@ package com.vytrack.step_definitions;
 import com.vytrack.pages.VyTrackDashboard;
 import com.vytrack.pages.VyTrackLoginPage;
 import com.vytrack.utility.BrowserUtil;
+import com.vytrack.utility.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Oro_Document {
     VyTrackLoginPage loginPage;
@@ -35,24 +40,19 @@ public class Oro_Document {
 
         BrowserUtil.waitFor(5);
 
+        Set<String> allHandles = Driver.getDriver().getWindowHandles();
+        assertEquals(allHandles.size(),2);
 
-       // Set<String> allHandles = Driver.getDriver().getWindowHandles();
-       // System.out.println("allHandles = " + allHandles);
-
-
-        /*
-
-        Set<String> allWindows = Driver.getDriver().getWindowHandles();
-        for (String eachWindow : allWindows) {
-            if(eachWindow.equalsIgnoreCase("Welcome to Oro Documentation")){
-                System.out.println("Test Pass");
-            }else{
-                System.out.println("Failed");
-            }
+        for (String eachHandle : allHandles) {
+           Driver.getDriver().switchTo().window(eachHandle);
         }
-
-      */
+        System.out.println("Driver.getDriver().getTitle() = " + Driver.getDriver().getTitle());
+        assertEquals("Welcome to Oro Documentation",Driver.getDriver().getTitle());
 
     }
-
 }
+
+
+
+
+
