@@ -1,4 +1,4 @@
-package com.vytrack.tests.altanochir_User_Story10;
+package com.vytrack.pages;
 
 import com.vytrack.utility.Driver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +9,19 @@ public class VyTrackDashboard {
 
     @FindBy(xpath = "//i[@class='fa-question-circle']")
     private WebElement questionIcon ;
+
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[3]/a/span")
+    public WebElement fleetVehicle;
+
+    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a/span")
+    public WebElement fleetModule;
+
+    @FindBy(linkText = "Customers")
+    public WebElement customersModule;
+
+    @FindBy(linkText = "Contacts")
+    public WebElement customerContacts;
+
 
 
     public VyTrackDashboard(){
@@ -24,4 +37,4 @@ public class VyTrackDashboard {
 
 }
 
-
+//*[@id="main-menu"]/ul/li[2]/a/span
