@@ -26,7 +26,7 @@ public class UserStory9 extends TestBase{
 
         BrowserUtil.waitFor(5);
 
-        Assertions.assertEquals("Dashboard",driver.getTitle());
+        assertEquals("Dashboard",driver.getTitle());
 
         VehicleContractCreation contractCreation = new VehicleContractCreation();
 
@@ -39,35 +39,24 @@ public class UserStory9 extends TestBase{
         action.click(driver.findElement(By.linkText("Vehicle Contracts"))).perform();
         BrowserUtil.waitFor(4);
 
-
-        //contractCreation.VehicleContract.click();
-        //BrowserUtil.waitFor(3);
-
-
         contractCreation.CreateVehicleContractBtn.click();
         BrowserUtil.waitFor(5);
 
         contractCreation.SaveAndCloseBtn.click();
         BrowserUtil.waitFor(4);
 
+        String expectedResult = "Entity saved";
+        String actualResult = driver.findElement(By.xpath("//div[@class='message']")).getText();
+        assertEquals("Entity saved", actualResult);
+        System.out.println("Expected result is " + expectedResult);
+        System.out.println("Actual Result is " + actualResult);
 
-        String alertTxt = "";
-        alertTxt = contractCreation.entityMsg.getText();
 
 
-        alertTxt = alertTxt.replaceAll("[^a-zA-Z]", "");
-
-        System.out.println("Alert message:\n"+ alertTxt);
-
-        Assertions.assertEquals("Entitysaved", alertTxt);
 
 
 
     }
-
-
-
-
 
 
 
