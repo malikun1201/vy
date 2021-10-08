@@ -41,6 +41,9 @@ public class VehicleOdometerPage {
     @FindBy(className = "message")
     public WebElement entityMsg;
 
+    @FindBy(xpath = "//*[@id=\"flash-messages\"]/div/div/div[2]/div")
+    public WebElement flashMessage;
+
     public VehicleOdometerPage(){
         PageFactory.initElements(com.vytrack.utility.Driver.getDriver(), this);
     }
