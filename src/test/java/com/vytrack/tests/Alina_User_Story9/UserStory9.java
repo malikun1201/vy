@@ -13,6 +13,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class UserStory9 extends TestBase{
 
     @Test
@@ -64,6 +66,15 @@ public class UserStory9 extends TestBase{
     }
 
 
+
+
+
+
+
+    }
+
+
+
     /*
     As a user, I should be able to create Vehicle Contract.
 AC #1: managers are able to Create Vehicle Contract.
@@ -78,4 +89,4 @@ Given driver is on the homePage
 When user select “Vehicle Contract” under Fleet module
 Then verify “You do not have permission to perform this action.” message
      */
-}
+
