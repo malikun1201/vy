@@ -13,7 +13,7 @@ public class VyTrackDashboard {
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[3]/a/span")
     public WebElement fleetVehicle;
 
-    @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/a/span")
+    @FindBy(linkText = "Fleet")
     public WebElement fleetModule;
 
     @FindBy(linkText = "Customers")
@@ -22,6 +22,29 @@ public class VyTrackDashboard {
     @FindBy(linkText = "Contacts")
     public WebElement customerContacts;
 
+    @FindBy(linkText = "Dashboards")
+    public WebElement dashboards;
+
+    @FindBy(linkText = "Sales")
+    public WebElement sales;
+
+    @FindBy(linkText="Activities")
+    public WebElement activities;
+
+    @FindBy(linkText="Marketing")
+    public WebElement marketing;
+
+    @FindBy(linkText="Reports & Segments")
+    public WebElement reportsandsegments;
+
+    @FindBy(linkText="System")
+    public WebElement system;
+
+    @FindBy(id="user-menu")
+    public WebElement userMenu;
+
+    @FindBy(linkText="Logout")
+    public WebElement logoutButton;
 
 
     public VyTrackDashboard(){
