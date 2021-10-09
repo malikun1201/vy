@@ -49,6 +49,7 @@ public class UserStory9_AC2 extends TestBase {
             assertEquals("You do not have permission to perform this action.", actualResult);
             System.out.println("Expected result is " + expectedResult);
             System.out.println("Actual Result is " + actualResult);
+            System.out.println("Good job");
 
 
             VyTrackLogoutPage logoutPage = new VyTrackLogoutPage();
