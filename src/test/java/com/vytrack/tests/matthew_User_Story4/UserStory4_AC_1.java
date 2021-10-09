@@ -1,22 +1,22 @@
 package com.vytrack.tests.matthew_User_Story4;
 
 import com.github.javafaker.Faker;
-import com.github.javafaker.FunnyName;
 import com.github.javafaker.Name;
 import com.vytrack.pages.VyTrackContactsPage;
 import com.vytrack.pages.VyTrackDashboard;
 import com.vytrack.pages.VyTrackLoginPage;
+import com.vytrack.pages.VyTrackLogoutPage;
 import com.vytrack.utility.BrowserUtil;
 import com.vytrack.utility.TestBase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.*;
 
 
 public class UserStory4_AC_1 extends TestBase {
@@ -25,27 +25,40 @@ public class UserStory4_AC_1 extends TestBase {
 
     @Test
     public void CreateContactInfoTest(){
-/*
-        Map<String, String> driverMap = new HashMap<>();
+
+        Map<String, String> driverMap = new LinkedHashMap<>();
         driverMap.put("user13", "UserUser123");
         driverMap.put("user14", "UserUser123");
         driverMap.put("user15", "UserUser123");
-        Map<String, String> storeManagerMap = new HashMap<>();
+        Map<String, String> storeManagerMap = new LinkedHashMap<>();
         storeManagerMap.put("storemanager59", "UserUser123");
         storeManagerMap.put("storemanager60", "UserUser123");
-        Map<String, String> salesManagerMap = new HashMap<>();
+        Map<String, String> salesManagerMap = new LinkedHashMap<>();
         salesManagerMap.put("salesmanager113", "UserUser123");
         salesManagerMap.put("salesmanager114", "UserUser123");
         salesManagerMap.put("salesmanager115", "UserUser123");
-*/
+
+        Map<String, String> allUsersAvailable = new LinkedHashMap<>();
+        allUsersAvailable.putAll(driverMap);
+        allUsersAvailable.putAll(storeManagerMap);
+        allUsersAvailable.putAll(salesManagerMap);
+
+
+
         //methods to be used.
         Actions action = new Actions(driver);
         WebDriverWait wait = new WebDriverWait(driver,10);
 
+        //                                        VV change this map depending on who logs in
+        for (Map.Entry<String, String> entry : allUsersAvailable.entrySet()){
+
+
 
         VyTrackLoginPage loginPage = PageFactory.initElements(driver,VyTrackLoginPage.class);
-        //logging in
-        loginPage.login("user13","UserUser123");
+        //logging in, using hashmap key for username and value for password
+        loginPage.login(entry.getKey(), entry.getValue());
+
+
 
         //waiting until page delay has loaded.
         wait.until(ExpectedConditions.titleIs("Dashboard"));
@@ -87,14 +100,18 @@ public class UserStory4_AC_1 extends TestBase {
         String actualMsg = contactsPage.entityMsg.getText();
 
         //asserting test pass.
-        Assertions.assertEquals("contact saved",actualMsg);
+        Assertions.assertEquals("Contact saved",actualMsg);
 
+        //logging out to check next in loop.
+        VyTrackLogoutPage logoutPage = PageFactory.initElements(driver, VyTrackLogoutPage.class);
+        action.click(logoutPage.userMenuTab).perform();
+        action.click(logoutPage.logoutTab).perform();
 
 
     }
 
 
-}
+}}
 
 
 /*
